@@ -1,0 +1,31 @@
+.home-bg{
+  background-color: #1b1c1c;
+  padding: 20px;
+}
+
+.home-heading{
+  color: white;
+  margin-top: 0;
+}
+
+.loader-container{
+  height: 100vh;
+}
+
+.loading-text{
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.songs-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+@media (max-width: 400px) {
+  .songs-list{
+    grid-template-columns: 1fr;
+  }
+}
+

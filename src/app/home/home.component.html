@@ -1,3 +1,17 @@
 <main>
-  <p>home works!</p>
+  <div class="home-bg">
+    <h1 class="home-heading">Welcome to MusicHub</h1>
+    <div *ngIf="isLoading" class="loader-container">
+      <p class="loading-text">Loading...</p>
+    </div>
+    <section *ngIf="!isLoading" class="songs-list">
+      <app-audio-card
+      *ngFor="let song of songsData"
+      [song] = "song"
+      [isThemeDark] = "isThemeDark"
+      (playAudio) = "handlePlay($event)"
+      >
+      </app-audio-card>
+    </section>
+  </div>
 </main>

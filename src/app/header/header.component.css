@@ -8,9 +8,12 @@ header {
   align-items: center;
   padding: 10px 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  
+  background-color: black;
+  color: white;
 }
 
-header.dark{
+/* header.dark{
   background-color: black;
   color: white;
 }
@@ -18,7 +21,7 @@ header.dark{
 header:not(.dark){
   background-color: white;
   color: black;
-}
+} */
 
 header img {
   width: 50px;
@@ -33,13 +36,13 @@ header div {
   align-items: center;
 }
 
-.theme-toggle {
+/* .theme-toggle {
   padding: 0;
   outline: none;
   border: none;
   background-color: transparent;
   cursor: pointer;
-}
+} */
 
 .logout-button {
   font-family: 'Roboto', sans-serif;
@@ -51,9 +54,13 @@ header div {
   cursor: pointer;
   border: 1px solid transparent;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  color: #f9f9f9;
+  background-color: transparent;
+  border-color: #f9f9f9;
 }
 
-header.dark .logout-button {
+/* header.dark .logout-button {
   color: #f9f9f9;
   background-color: transparent;
   border-color: #f9f9f9;
@@ -63,4 +70,4 @@ header:not(.dark) .logout-button {
   color: white;
   background-color: #3b82f6;
   border:none
-}
+} */

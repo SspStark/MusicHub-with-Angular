@@ -36,19 +36,19 @@ export class LoginComponent implements OnInit{
     if (this.loginForm.valid){
       this.isLoading = true;
       const loginData = this.loginForm.value;
-      this.authService.login(loginData).subscribe(
-        (response) => {
+      this.authService.login(loginData).subscribe({
+        next:(response) => {
           this.cookieService.set('jwt_token',response.jwt_token,30);
           this.router.navigate(['/home']);
         },
-        (error) => {
+        error:(error) => {
           this.errorMsg = error.error ? error.error.error:"An error occured. Please try again later.";
           console.log(error.error.error)
         },
-        () => {
+        complete:() => {
           this.isLoading = false;
         }
-      );
+    });
     }
   }
 

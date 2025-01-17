@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThemeService } from '../services/theme.service';
+//import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -15,18 +15,18 @@ export class HeaderComponent {
   faMoon = faMoon;
 
   constructor(
-    private themeService:ThemeService,
+    //private themeService:ThemeService,
     private router:Router,
     private cookieService:CookieService
   ){
-    this.themeService.isThemeDark$.subscribe(
-      (theme) => (this.isThemeDark = theme)
-    )
+    // this.themeService.isThemeDark$.subscribe(
+    //   (theme) => (this.isThemeDark = theme)
+    // )
   }
 
-  toggleTheme(){
-    this.themeService.toggleTheme();
-  }
+  // toggleTheme(){
+  //   this.themeService.toggleTheme();
+  // }
 
   logout(){
     this.cookieService.delete('jwt_token')

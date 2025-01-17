@@ -1,1 +1,13 @@
-<p>audio-card works!</p>
+<div class="audio-item">
+  <img [src]="song?.image_url" [alt] = "song?.title" title="audio image" class="audio-image"/>
+  <p class="audio-title">{{song?.title}}</p>
+  <p class="audio-artist">{{song?.artist}}</p>
+  <audio
+    class="audio-element"
+    controls
+    [id]="song?.id"
+    (play)="onPlay($event.target)"
+  >
+    <source [src]="song?.audioUrl" type="audio/mp3" />
+  </audio>
+</div>

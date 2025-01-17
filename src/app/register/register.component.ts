@@ -35,18 +35,18 @@ export class RegisterComponent {
     if (this.registerForm.valid){
       this.isLoading = true;
       const registerData = this.registerForm.value;
-      this.authService.register(registerData).subscribe(
-        () => {
+      this.authService.register(registerData).subscribe({
+        next:() => {
           this.router.navigate(['/login'])
         },
-        (error) => {
+        error:(error) => {
           this.errorMsg = error.error ? error.error.error : 'An error occurred. Please try again later.';
           this.isLoading = false;
         },
-        ()=>{
+        complete:()=>{
           this.isLoading = false;
         }
-      )
+    })
     }
   }
 
