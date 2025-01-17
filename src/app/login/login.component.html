@@ -1,0 +1,35 @@
+<div class="login-sign-up-page">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <p *ngIf="errorMsg" class="error-msg">*{{ errorMsg }}</p>
+    <div class="website-logo">
+      <img src="https://res.cloudinary.com/dvgymshsh/image/upload/v1694350601/music-logo_gykg7f.jpg" alt="website logo" />
+      <p>MusicHub</p>
+    </div>
+    <div class="input-box">
+      <label>Email or Username</label>
+      <input formControlName="username" class="email-user" type="text" placeholder="Username" />
+    </div>
+    <div class="input-box">
+      <label>Password</label>
+      <div class="password-container">
+        <input
+          formControlName="password"
+          [type]="showPassword ? 'text' : 'password'"
+          class="password"
+          placeholder="Password"
+        />
+        <div class="p-icon-container" (click)="togglePassword()">
+          <i *ngIf="showPassword" class="bi bi-eye" title="Hide password"></i>
+          <i *ngIf="!showPassword" class="bi bi-eye-slash" title="Show password"></i>
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid || isLoading" class="login-button">
+      {{ isLoading ? 'Logging in...' : 'Login' }}
+    </button>
+    <p class="forgot-password" (click)="forgotPassword()">Forgot your password?</p>
+  </form>
+  <p class="sign-up-login">
+    Don't have an account? <span (click)="signUp()">Sign up</span>
+  </p>
+</div>

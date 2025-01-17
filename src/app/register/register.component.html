@@ -1,0 +1,43 @@
+<div class="login-sign-up-page">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <p *ngIf="errorMsg" class="error-msg">{{errorMsg}}</p>
+    <div class="website-logo">
+      <img src="https://res.cloudinary.com/dvgymshsh/image/upload/v1694350601/music-logo_gykg7f.jpg" alt="website logo"/>
+      <p>MusicHub</p>
+    </div>
+    <div class="input-box">
+      <label for="email">Enter your Email</label>
+      <input id="email" type="email" class="email-user" formControlName="email"/>
+    </div>
+    <div class="input-box">
+      <label for="username">Create a Username</label>
+      <input id="username" type="text" class="email-user" formControlName="username"/>
+    </div>
+    <div class="input-box">
+      <div class="password-heading">
+        <label for="password">Create a strong password</label>
+        <i class="info-icon" title="Must be at least 8 characters, 1 capital, 1 lowercase, 1 special character, 1 number">
+          &#9432;
+        </i>
+      </div>
+      <div class="password-container">
+        <input class="password"
+          id="password"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <div class="p-icon-container" (click)="togglePassword()">
+          <i *ngIf="showPassword" class="bi bi-eye" title="Hide password"></i>
+          <i *ngIf="!showPassword" class="bi bi-eye-slash" title="Show password"></i>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="sign-up-btn" [disabled]="registerForm.invalid || isLoading" >
+      {{isLoading? 'Signing up...':'sign up'}}
+    </button>
+  </form>
+  <p class="sign-up-login">
+    Already have an account? <span (click)="login()">Login</span>
+  </p>
+</div>

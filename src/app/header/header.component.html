@@ -1,0 +1,16 @@
+<header [class.dark]="isThemeDark">
+  <img
+    src="https://res.cloudinary.com/dvgymshsh/image/upload/v1694350601/music-logo_gykg7f.jpg"
+    alt="header-logo"
+  />
+  <div>
+    <button class="theme-toggle" (click)="toggleTheme()" title="theme button">
+      <fa-icon
+      [icon]="isThemeDark ? faSun : faMoon"
+      [ngStyle]="{ color: isThemeDark ? 'white' : 'black' }"
+      size="2x"
+      ></fa-icon>
+    </button>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</header>
