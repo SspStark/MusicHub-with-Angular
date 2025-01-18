@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
       this.authService.login(loginData).subscribe({
         next:(response) => {
           this.cookieService.set('jwt_token',response.jwt_token,30);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         },
         error:(error) => {
           this.errorMsg = error.error ? error.error.error:"An error occured. Please try again later.";

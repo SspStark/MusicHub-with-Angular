@@ -37,7 +37,7 @@ export class HomeComponent {
         console.error("Error fetching songs", error);
         this.isLoading = false;
       }
-  });
+    });
   }
 
   handlePlay(audio:HTMLAudioElement){
